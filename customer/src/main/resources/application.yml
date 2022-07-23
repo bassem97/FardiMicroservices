@@ -8,8 +8,12 @@ spring:
     mongodb:
       uri: mongodb+srv://fardi:fardi@fardicluster.jcch73w.mongodb.net/?retryWrites=true&w=majority
       database: customers
+      auto-index-creation: true
 
 
 logging:
   level:
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
+
+
