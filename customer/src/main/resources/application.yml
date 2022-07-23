@@ -4,3 +4,12 @@ server:
 spring:
   application:
     name : customer
+  data:
+    mongodb:
+      uri: mongodb+srv://fardi:fardi@fardicluster.jcch73w.mongodb.net/?retryWrites=true&w=majority
+      database: customers
+
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
