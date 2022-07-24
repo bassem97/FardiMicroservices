@@ -1,6 +1,6 @@
-package com.fardi.customer.Security;
+package com.fardi.customermicroservice.Security;
 
-import com.fardi.customer.service.UserServiceDetails;
+import com.fardi.customermicroservice.service.UserServiceDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +20,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
-@Profile("development")
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
 

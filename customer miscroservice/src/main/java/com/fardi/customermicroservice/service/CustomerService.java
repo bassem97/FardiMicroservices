@@ -1,9 +1,9 @@
-package com.fardi.customer.service;
+package com.fardi.customermicroservice.service;
 
 
-import com.fardi.customer.entity.Customer;
-import com.fardi.customer.entity.Role;
-import com.fardi.customer.repository.CustomerRepository;
+import com.fardi.customermicroservice.entity.Customer;
+import com.fardi.customermicroservice.entity.Role;
+import com.fardi.customermicroservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
-package com.fardi.customer.util;
+package com.fardi.customermicroservice.util;
 
 
-import com.fardi.customer.entity.Customer;
+import com.fardi.customermicroservice.entity.Customer;
 
 public class JwtRespone {
     private String token;

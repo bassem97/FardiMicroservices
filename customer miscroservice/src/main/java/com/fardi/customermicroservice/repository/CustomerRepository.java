@@ -1,7 +1,7 @@
-package com.fardi.customer.repository;
+package com.fardi.customermicroservice.repository;
 
 
-import com.fardi.customer.entity.Customer;
+import com.fardi.customermicroservice.entity.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,8 +1,8 @@
-package com.fardi.customer.controller;
+package com.fardi.customermicroservice.controller;
 
 
-import com.fardi.customer.entity.Customer;
-import com.fardi.customer.service.CustomerService;
+import com.fardi.customermicroservice.entity.Customer;
+import com.fardi.customermicroservice.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

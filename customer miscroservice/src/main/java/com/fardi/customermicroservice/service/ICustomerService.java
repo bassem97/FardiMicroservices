@@ -1,8 +1,8 @@
-package com.fardi.customer.service;
+package com.fardi.customermicroservice.service;
 
 
 
-import com.fardi.customer.entity.Customer;
+import com.fardi.customermicroservice.entity.Customer;
 
 import java.util.List;
 

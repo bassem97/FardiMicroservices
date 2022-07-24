@@ -1,4 +1,4 @@
-package com.fardi.customer.entity;
+package com.fardi.customermicroservice.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

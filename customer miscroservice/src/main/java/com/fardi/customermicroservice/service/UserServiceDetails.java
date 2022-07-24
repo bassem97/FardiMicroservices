@@ -1,7 +1,7 @@
-package com.fardi.customer.service;
+package com.fardi.customermicroservice.service;
 
-import com.fardi.customer.entity.MyUserDetails;
-import com.fardi.customer.repository.CustomerRepository;
+import com.fardi.customermicroservice.entity.MyUserDetails;
+import com.fardi.customermicroservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;

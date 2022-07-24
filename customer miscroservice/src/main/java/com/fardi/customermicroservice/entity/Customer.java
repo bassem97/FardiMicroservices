@@ -1,4 +1,4 @@
-package com.fardi.customer.entity;
+package com.fardi.customermicroservice.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;

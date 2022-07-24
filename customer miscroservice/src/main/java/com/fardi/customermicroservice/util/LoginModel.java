@@ -1,4 +1,4 @@
-package com.fardi.customer.util;
+package com.fardi.customermicroservice.util;
 
 import lombok.Data;
 

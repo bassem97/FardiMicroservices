@@ -1,12 +1,12 @@
-package com.fardi.customer.controller;
+package com.fardi.customermicroservice.controller;
 
 
 
-import com.fardi.customer.Security.SecurityConfig;
-import com.fardi.customer.Security.TokenProvider;
-import com.fardi.customer.service.CustomerService;
-import com.fardi.customer.util.JwtRespone;
-import com.fardi.customer.util.LoginModel;
+import com.fardi.customermicroservice.Security.SecurityConfig;
+import com.fardi.customermicroservice.Security.TokenProvider;
+import com.fardi.customermicroservice.service.CustomerService;
+import com.fardi.customermicroservice.util.JwtRespone;
+import com.fardi.customermicroservice.util.LoginModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
