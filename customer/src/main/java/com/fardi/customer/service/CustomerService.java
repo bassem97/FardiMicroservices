@@ -2,8 +2,10 @@ package com.fardi.customer.service;
 
 
 import com.fardi.customer.entity.Customer;
+import com.fardi.customer.entity.Role;
 import com.fardi.customer.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +15,11 @@ public class CustomerService implements ICustomerService {
 
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Autowired
+    private PasswordEncoder bcryptEncoder;
+
+
 
 
     @Override
@@ -28,6 +35,11 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer saveOrUpdateCustomer(Customer customer) {
+        if(customerRepository.findAll().isEmpty())
+            customer.setRole(Role.ADMIN);
+        else
+            customer.setRole(Role.USER);
+        customer.setPassword(bcryptEncoder.encode(customer.getPassword()));
         return customerRepository.save(customer);
     }
 
@@ -35,4 +47,9 @@ public class CustomerService implements ICustomerService {
     public void deleteCustomerById(String id) {
         customerRepository.deleteById(id);
     }
+
+    public Customer findByEmail(String email) {
+        return customerRepository.findCustomerByEmail(email);
+    }
+
 }

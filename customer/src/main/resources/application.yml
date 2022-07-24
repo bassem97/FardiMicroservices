@@ -2,13 +2,18 @@ server:
   port: 8080
 
 spring:
+  profiles:
+    active: development
   application:
-    name : customer
+    name: customer
   data:
     mongodb:
       uri: mongodb+srv://fardi:fardi@fardicluster.jcch73w.mongodb.net/?retryWrites=true&w=majority
       database: customers
       auto-index-creation: true
+  main:
+    allow-circular-references: true
+
 
 
 logging:
