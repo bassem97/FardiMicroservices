@@ -5,6 +5,7 @@ import com.fardi.customermicroservice.entity.Customer;
 import com.fardi.customermicroservice.entity.Role;
 import com.fardi.customermicroservice.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class CustomerService implements ICustomerService {
     private CustomerRepository customerRepository;
 
     @Autowired
-    private PasswordEncoder bcryptEncoder;
+    ApplicationContext context;
 
 
 
@@ -35,11 +36,12 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer saveOrUpdateCustomer(Customer customer) {
+        PasswordEncoder bcryptPasswordEncoder = context.getBean(PasswordEncoder.class);
         if(customerRepository.findAll().isEmpty())
             customer.setRole(Role.ADMIN);
         else
             customer.setRole(Role.USER);
-        customer.setPassword(bcryptEncoder.encode(customer.getPassword()));
+        customer.setPassword(bcryptPasswordEncoder.encode(customer.getPassword()));
         return customerRepository.save(customer);
     }
 

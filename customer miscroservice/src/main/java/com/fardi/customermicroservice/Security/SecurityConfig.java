@@ -2,6 +2,7 @@ package com.fardi.customermicroservice.Security;
 
 import com.fardi.customermicroservice.service.UserServiceDetails;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -29,8 +30,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
     @Autowired
     private JwtAuthenticationFilter authenticationFilter;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
+@Autowired
+ApplicationContext context;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -49,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
     @Override
     @Autowired
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+        PasswordEncoder passwordEncoder = context.getBean(PasswordEncoder.class);
         // configure AuthenticationManager so that it knows from where to load
         // user for matching credentials
         // Use BCryptPasswordEncoder
