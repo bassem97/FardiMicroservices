@@ -1,3 +1,5 @@
+package com.fardi.customermicroservice.service;
+
 import com.fardi.customermicroservice.entity.Customer;
 import com.fardi.customermicroservice.entity.Role;
 import com.fardi.customermicroservice.repository.CustomerRepository;
@@ -17,14 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 public class CustomerServiceImplTest {
 
-    @TestConfiguration
-    static class CustomerServiceImplTestContextConfiguration {
 
-        @Bean
-        public CustomerService customerService() {
-            return new CustomerService();
-        }
-    }
 
     @Autowired
     private CustomerService customerService;
@@ -46,6 +41,7 @@ public class CustomerServiceImplTest {
         Customer bassem = getCustomer();
         Mockito.when(customerRepository.findCustomerByEmail(bassem.getEmail())).thenReturn(bassem);
     }
+
 
     private Customer getCustomer() {
         Customer bassem = new Customer();

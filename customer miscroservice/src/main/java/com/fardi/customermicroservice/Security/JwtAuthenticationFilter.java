@@ -5,6 +5,7 @@ import com.fardi.customermicroservice.service.UserServiceDetails;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,11 +20,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
+@ComponentScan("com.fardi.customermicroservice.service")
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 
     @Autowired
-    private UserServiceDetails userDetailsService;
+    private UserServiceDetails userServiceDetails;
 
     @Autowired
     private TokenProvider jwtTokenUtil;
@@ -48,7 +50,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            UserDetails userDetails = userServiceDetails.loadUserByUsername(username);
 
             if (jwtTokenUtil.validateToken(authToken, userDetails)) {
                 UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
