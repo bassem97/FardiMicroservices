@@ -3,7 +3,6 @@ package com.fardi.customermicroservice.service;
 import com.fardi.customermicroservice.entity.Customer;
 import com.fardi.customermicroservice.entity.Role;
 import com.fardi.customermicroservice.repository.CustomerRepository;
-import com.fardi.customermicroservice.service.CustomerService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +17,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 public class CustomerServiceImplTest {
+
+    @TestConfiguration
+    static class CustomerServiceImplTestContextConfiguration {
+
+        @Bean
+        public CustomerService customerService() {
+            return new CustomerService();
+        }
+    }
 
 
 
