@@ -23,6 +23,9 @@ public class Customer {
     public String phone;
 
     @Enumerated(EnumType.STRING)
+    public String gender;
+
+    @Enumerated(EnumType.STRING)
     private Role role;
 
 }
