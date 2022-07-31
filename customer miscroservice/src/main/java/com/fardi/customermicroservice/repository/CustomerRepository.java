@@ -2,6 +2,7 @@ package com.fardi.customermicroservice.repository;
 
 
 import com.fardi.customermicroservice.entity.Customer;
+import com.fardi.customermicroservice.entity.Gender;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,5 +14,7 @@ public interface CustomerRepository extends MongoRepository<Customer, String> {
 
     Optional<Customer> findById(String id);
     Customer findCustomerByEmail(String email);
+
+    Customer findCustomerByGender(Gender gender);
 
 }
